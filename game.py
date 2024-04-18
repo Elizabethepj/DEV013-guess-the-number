@@ -1,3 +1,4 @@
+"""game guess number"""
 from random import randint
 
 # Solicitar el número al usuario
@@ -5,6 +6,7 @@ from random import randint
 
 
 def request_number():
+    """Request the number from the user"""
     while True:
         try:
             numero = int(input("Es tu turno. Adivina el número secreto: "))
@@ -19,6 +21,7 @@ def request_number():
 
 
 def user_turn(secret_num):
+    """Set up the user's shift"""
     while True:
         user_num = request_number()
 
@@ -35,6 +38,7 @@ def user_turn(secret_num):
 
 
 def pc_turn(secret_num):
+    """Set up the pc's shift"""
     system_num = randint(1, 100)
     print(f"El número que la computadora ha ingresado es: {system_num}")
     if system_num == secret_num:
@@ -49,6 +53,7 @@ def pc_turn(secret_num):
 
 
 def play_again():
+    """Request if user want play again"""
     while True:
         answer = input("¿Quieres jugar otra vez? (s/n)\n")
         if answer.lower() == "s":
@@ -62,6 +67,7 @@ def play_again():
 
 
 def magic_num():
+    """Set up the game"""
     while True:
         secret_num = randint(1, 100)
         print(secret_num)
